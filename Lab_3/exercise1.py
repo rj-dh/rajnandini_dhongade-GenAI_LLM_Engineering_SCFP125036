@@ -4,7 +4,6 @@ from getpass import getpass
 from groq import Groq
 
 
-#Initialize groq api client
 api_key = os.environ.get("API_KEY")
 
 if not api_key:
@@ -12,7 +11,6 @@ if not api_key:
 
 client = Groq(api_key=api_key)
 
-#doc summary
 def generate_doctor_summary(patient_notes, patient_name):
 
     prompt = f"""
@@ -67,7 +65,6 @@ Recommendation:
     return response.choices[0].message.content
 
 
-# Main program
 if __name__ == "__main__":
 
     print("=" * 45)
