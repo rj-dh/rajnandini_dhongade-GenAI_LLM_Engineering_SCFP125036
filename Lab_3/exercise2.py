@@ -5,7 +5,6 @@ from groq import Groq
 #create Groq client
 client = Groq(api_key=os.environ["API_KEY"])
 
-
 #classify customer review
 def classify_review(review_text):
 
