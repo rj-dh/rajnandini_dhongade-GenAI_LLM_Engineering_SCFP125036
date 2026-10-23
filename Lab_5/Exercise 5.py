@@ -1,4 +1,3 @@
-
 import os
 from pydantic import BaseModel, Field
 from langchain_groq import ChatGroq
