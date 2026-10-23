@@ -3,11 +3,9 @@ import os
 import json
 from groq import Groq
 
-#create Groq client
 client = Groq(api_key=os.environ["API_KEY"])
 
 
-#function to extract resume details
 def extract_resume_fields(resume_text, fields_to_extract):
 
     prompt = f"""
@@ -28,7 +26,6 @@ Instructions:
 - If a field is not available in the resume, use null.
 - Do not include explanations or text outside the JSON.
 """
-
     response = client.chat.completions.create(
         model="openai/gpt-oss-20b",
         messages=[
@@ -39,14 +36,10 @@ Instructions:
 
     result = response.choices[0].message.content.strip()
 
-    #convert json text into a python dictionary
     return json.loads(result)
 
-
-#get resume text from the user
 resume_text = input("Enter resume text: ")
 
-# Enter the fields to extract
 fields_input = input(
     "Enter fields to extract (separated by commas): "
 )
@@ -55,7 +48,6 @@ fields_to_extract = [
     field.strip() for field in fields_input.split(",")
 ]
 
-#extract and display the result
 try:
     extracted_data = extract_resume_fields(
         resume_text,
