@@ -3,7 +3,6 @@ import os
 import json
 from groq import Groq
 
-#create Groq client
 client = Groq(api_key=os.environ["API_KEY"])
 
 
