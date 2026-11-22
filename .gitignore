@@ -3,3 +3,7 @@
 __pycache__/
 budget_vector_db/
 RAG/
+
+langgraph question.ipynb
+langgraph_demo.ipynb
+today.ipynb
